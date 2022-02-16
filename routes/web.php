@@ -14,5 +14,5 @@ use App\Http\Controllers\AuthController;
 |
 */
 
-Route::get('/', [AuthController::class, 'login']);
-Route::get('/signup', [AuthController::class, 'signup']);
+Route::get('/', [AuthController::class, 'login'])->name('login');
+Route::get('/signup', [AuthController::class, 'signup'])->name('signup');
