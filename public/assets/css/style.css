@@ -87,3 +87,31 @@ body {
     border-radius: 4px;
     cursor: pointer;
 }
+
+.error-message {
+    display: block;
+    margin: -0.5rem 0 0.5rem;
+    color: red;
+}
+
+/* dashboard */
+.dashboard {
+    margin-top: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.dashboard-title {
+    padding: 0.5rem;
+    background-color: #efefef;
+    font-size: 1.2rem;
+    color: #666;
+    text-align: center;
+}
+
+.dashboard-username {
+    padding: 1rem;
+    font-size: 1.2rem;
+    color: #666;
+    text-align: center;
+}
