@@ -7,27 +7,50 @@ use App\Http\Requests\AuthRequest;
 
 class AuthController extends Controller
 {
-    public function login ()
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
     {
         return view('login');
     }
 
-    public function signup ()
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
     {
         return view('signup');
     }
 
-    public function resist(AuthRequest $request)
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(AuthRequest $request)
     {
-        return redirect()->route('home')->with(['username' => $request->username]);
+        $auth = $request->username;
+        return redirect()->route('auth.show', compact('auth'));
     }
 
-    public function home (Request $request)
+    /**
+     * Display the specified resource.
+     *
+     * @param  string  $auth
+     * @return \Illuminate\Http\Response
+     */
+    public function show($auth)
     {
-        $username = $request->session()->get('username');
+        $username = $auth;
         if (!$username) {
-            return redirect()->route('signup');
+            return redirect()->route('auth/create');
         }
-        return view('home', ['username' => $username]);
+        return view('home', compact('username'));
     }
 }

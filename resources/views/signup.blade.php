@@ -5,7 +5,7 @@
 @section('content')
     <div class="container__inner">
         <h1 class="page-title">ユーザー登録ページ</h1>
-        <form action="{{ url('/resist')}}" method="POST" class="auth-form">
+        <form action="{{ url('auth')}}" method="POST" class="auth-form">
             {{ csrf_field() }}
             <div class="auth-form__input">
                 <span>UserName: </span><input type="text" name="username" />
