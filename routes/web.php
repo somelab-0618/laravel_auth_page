@@ -14,5 +14,4 @@ use App\Http\Controllers\AuthController;
 |
 */
 
-Route::get('/', [AuthController::class, 'login'])->name('login');
-Route::get('/signup', [AuthController::class, 'signup'])->name('signup');
+Route::resource('auth', AuthController::class)->only(['index', 'create', 'store', 'show']);
